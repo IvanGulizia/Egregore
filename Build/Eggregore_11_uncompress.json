@@ -1,0 +1,16 @@
+{
+"companyName": "OutsideTheSkybox",
+"productName": "Village-Panic",
+"productVersion": "0.1",
+"dataUrl": "Eggregore_11_uncompress.data.unityweb",
+"wasmCodeUrl": "Eggregore_11_uncompress.wasm.code.unityweb",
+"wasmFrameworkUrl": "Eggregore_11_uncompress.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Light",
+"backgroundColor": "#FFFFFF",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.1f1"
+}
