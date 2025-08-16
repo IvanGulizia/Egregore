@@ -2,8 +2,7 @@
 <html lang="en-us">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Unity WebGL Player | Village-Panic</title>
+  <title>Unity WebGL Player | Eggregore</title>
   <script src="Build/UnityLoader.js"></script>
   <style>
     html, body {
@@ -17,26 +16,47 @@
       background: transparent;
     }
 
+    /* Container responsive avec ratio 16:9 */
     #unityContainer {
-      width: 100%;        /* prend toute la largeur du bloc Readymag */
-      height: 0;
-      padding-bottom: 56.25%; /* ratio 16:9 pour ton jeu */
-      position: relative;
+      width: 100%;
+      max-width: 1280px;
+      aspect-ratio: 16 / 9;
+      background: transparent;
     }
 
+    /* Le canvas Unity prend toute la place du container */
     #unityContainer canvas {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    /* Bouton “Jouer” centré au-dessus */
+    #playButton {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      z-index: 10;
+      padding: 1em 2em;
+      font-size: 1.2rem;
+      background: #007aff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
   <div id="unityContainer"></div>
+  <button id="playButton">Jouer</button>
+
   <script>
-    UnityLoader.instantiate("unityContainer", "Build/Eggregore_11_uncompress.json");
+    const container = document.getElementById('unityContainer');
+    const playButton = document.getElementById('playButton');
+
+    playButton.addEventListener('click', () => {
+      // Instantiate Unity seulement après le clic
+      UnityLoader.instantiate("unityContainer", "Build/Eggregore_11_uncompress.json");
+      playButton.style.display = 'none'; // Masque le bouton après le clic
+    });
   </script>
 </body>
 </html>
